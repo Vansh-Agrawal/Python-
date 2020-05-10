@@ -1,0 +1,17 @@
+import numpy as np
+def coinFlip(p):    
+     result = np.random.binomial(1,p)
+     return result
+'''Main Area'''
+probability = .5
+n = 10
+fullResults = np.arange(n)
+#perform desired numbered of flips at required probability set above
+for i in range(0, n):    
+    fullResults[i] = coinFlip(probability)    
+    i+=1
+#print results
+print("probability is set to ", probability)
+print("Tails = 0, Heads = 1: ", fullResults)
+print("Head Count: ", np.count_nonzero(fullResults == 1))
+print("Tail Count: ", np.count_nonzero(fullResults == 0))
